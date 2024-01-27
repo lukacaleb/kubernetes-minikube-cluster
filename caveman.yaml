@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: caveman
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: caveman
+  template:
+    metadata:
+      labels:
+        app: caveman
+    spec:
+      containers:
+      - name: caveman
+        image: nickstersz/caveman:1.1
+        ports:
+        - containerPort: 3000
